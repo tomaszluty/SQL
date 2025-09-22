@@ -1,0 +1,48 @@
+import art
+print (art.logo)
+should_continue = True
+start = []
+
+def maths(n1,n2, operator):
+        def add(n1, n2):
+            return n1 + n2
+
+        def subtract (n1, n2):
+            return n1 - n2
+
+        def multiply (n1, n2):
+            return n1 * n2
+
+        def divide (n1, n2):
+            if n2 != 0:
+                return n1 / n2
+            else:
+                "Cannot divide by zero"
+
+        operations ={
+           "+" :add,
+           "-" : subtract,
+           "*" :multiply,
+           "/":divide
+        }
+
+        if operator in operations:
+            return operations[operator](n1,n2)
+        else:
+            return "Invalid operator"
+while should_continue:
+    if not start:
+        n1 = int(input("Type your number:"))
+    else:
+        n1 = start[-1]
+    operator =input ("Choose mathematical operator:")
+    n2 = int (input ("Type the second number:"))
+
+    result= maths(n1,n2,operator)
+    print(f"Your result is {result}")
+    start.append(result)
+    answer = input("Do you want to continue working with the previous result?:")
+    if answer == "no":
+        start = []
+
+
