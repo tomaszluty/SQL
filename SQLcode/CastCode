@@ -1,0 +1,13 @@
+SELECT
+FORMAT (OrderDate, ' MMM yy') OrderDate,
+COUNT (*)
+from Sales.Orders
+Group By Format (OrderDate, ' MMM yy')
+
+CAST ('123' AS INT) AS [String to int],
+CAST (123 as varchar) as [ INT to string],
+CAST('2025-08-20' as date) AS [String to Date],
+CAST('2025-08-20' as datetime2) AS [String to DateTime],
+CreationTime,
+CAST (CreationTime as Date) as [Datetime to Date]
+From Sales.Orders
