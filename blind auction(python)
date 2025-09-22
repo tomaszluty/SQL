@@ -1,0 +1,19 @@
+import art
+print (art.logo)
+
+
+bidders = {}
+should_continue = True
+while should_continue:
+    name =input("What's your name?:")
+    bid = input  ("What's your bid? : £")
+    bidders[name] = bid
+    answer = input ("Do you want to add a bidder? yes/no: ")
+    print ("\n" *100)
+    if answer == "no":
+        should_continue = False
+
+highest_bidder = max(bidders, key = bidders.get)
+highest_bid = bidders[highest_bidder]
+
+print(f"The highest bidder is {highest_bidder} with the £{highest_bid}")
