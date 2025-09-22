@@ -1,0 +1,23 @@
+
+SELECT
+OrderID,
+OrderDate CurrentOrderDAte,
+LAG(OrderDate) OVer (ORder By OrderDate) PReviousORderDate,
+DateDiff( day, LAG(OrderDate) OVer (ORder By OrderDate),OrderDate) NrOfDays
+From Sales.Orders
+
+Select
+	--CAST(OrderDate as date) OrderDate
+	ORDERDate,
+	ISDate(ORderDate),
+	Case When isDate(ORderDate)  = 1 Then Cast (OrderDAte as DAte)
+		ELSE ('9999-01-01')
+	End NewOrderDate
+FROM
+(
+	
+	SELECT  '2025-08-20' AS OrderDate Union
+	SELECT  '2025-08-21' UNION
+	SELECT  '20-08-2025' UNION
+	SELECT  '2025-08'
+)t
