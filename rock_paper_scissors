@@ -1,0 +1,42 @@
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+game_images = [rock,paper,scissors]
+
+user_action = int(input("What do you choose? Type 0 for rock, 1 for paper or 2 for scissors "))
+if user_action >=0 and user_action <= 2:
+    print (game_images[user_action])
+computer_action = random.randint(0,2)
+print (f"Computer chose: ")
+print (game_images[computer_action])
+
+if user_action == computer_action:
+    print ("It's a draw")
+elif user_action > computer_action:
+    print ("You win")
+elif computer_action > user_action:
+    print ("Computer won")
